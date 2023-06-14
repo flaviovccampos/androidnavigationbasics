@@ -7,17 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.navigationbasics.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
 
     private lateinit var binding: FragmentSecondBinding
-    private var bundleStringParam: String? = null
+    private var bundleNameStringParam: String? = null
+    private var bundleEmailStringParam: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments.let {
-            bundleStringParam = it!!.getString("text_submit")
+            bundleNameStringParam = it!!.getString("text_name")
+            bundleEmailStringParam = it!!.getString("text_email")
         }
     }
 
@@ -26,10 +29,20 @@ class SecondFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_second, container, false)
 
-        if(TextUtils.isEmpty(bundleStringParam)){
-            binding.textView.text = "Text Submit Empty!!!"
+        if(TextUtils.isEmpty(bundleNameStringParam)){
+            binding.textViewName.text = "Text Name Empty!!!"
         }else{
-            binding.textView.text = bundleStringParam
+            binding.textViewName.text = bundleNameStringParam
+        }
+
+        if(TextUtils.isEmpty(bundleEmailStringParam)){
+            binding.textViewEmail.text = "Text Email Empty!!!"
+        }else{
+            binding.textViewEmail.text = bundleEmailStringParam
+        }
+
+        binding.buttonSecondTerms.setOnClickListener{
+            it.findNavController().navigate(R.id.action_secondFragment_to_termsFragment)
         }
 
         return binding.root

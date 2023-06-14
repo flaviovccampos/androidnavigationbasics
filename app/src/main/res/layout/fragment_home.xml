@@ -10,32 +10,30 @@
         android:layout_height="match_parent"
         tools:context=".HomeFragment">
 
-        <EditText
-            android:id="@+id/editTextSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Text something..."
-            android:inputType="text"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.191" />
-
         <Button
-            android:id="@+id/buttomSubmit"
+            android:id="@+id/buttomSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SUBMIT"
+            android:text="SIGN UP"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextSubmit"
-            app:layout_constraintVertical_bias="0.148" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.364" />
+
+        <Button
+            android:id="@+id/buttonTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TERMS"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttomSignUp"
+            app:layout_constraintVertical_bias="0.273" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

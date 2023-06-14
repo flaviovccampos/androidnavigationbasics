@@ -23,9 +23,12 @@ class HomeFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
-        binding.buttomSubmit.setOnClickListener {
-            val bundle = bundleOf("text_submit" to binding.editTextSubmit.text.toString())
-            it.findNavController().navigate(R.id.action_homeFragment_to_secondFragment, bundle)
+        binding.buttomSignUp.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_nameFragment)
+        }
+
+        binding.buttonTerms.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_termsFragment)
         }
 
         return binding.root
